@@ -393,7 +393,7 @@ That's nothing we could plug into a statistical model, such as a regression or t
 
 ## Normalization
 
-Normalization is the process of creating spatial weights. There is a huge dispute on how to do it (Neumayer & Plümper, 2016). But nobody questions whether it should be done in the first place since, among others, it restricts the parameter space of the weights to -1 and +1 and doesn't blow up our estimates.
+Normalization is the process of creating actual spatial weights. There is a huge dispute on how to do it (Neumayer & Plümper, 2016). But nobody questions whether it should be done in the first place since, among others, it restricts the parameter space of the weights.
 
 .pull-left[
 non-normalized
@@ -413,6 +413,8 @@ rowSums(spdep::nb2mat(queens_neighborhoods, style = "W")[1:5, 1:5]) %>% as.vecto
 ```
 ]
 
+<br>
+<br>
 .footnote[
 Neumayer, E., & Plümper, T. (2016). W. Political Science Research and Methods, 4(01), 175–193. https://doi.org/10.1017/psrm.2014.40
 
@@ -420,7 +422,19 @@ Neumayer, E., & Plümper, T. (2016). W. Political Science Research and Methods, 
 
 ---
 
-## Apply the normalization
+## Row-normalization
+
+One of the disputed but at the same time standard procedures is row-normalization. It divides all individual weights (=connections between spatial units) $w_{ij}$ by the row-wise sum of of all other weights:
+
+$$W = \sum_j\frac{w_{ij}}{\sum_jw_{ij}}$$
+
+An alternative would be minmax-normalization:
+
+$$W = \sum_j\frac{w_{ij} - min(w_{ij})}{max(w_{ij})-min(w_{ij})}$$
+
+---
+
+## Apply row-normalization
 
 ```{r normalize-weight}
 queens_W <- spdep::nb2listw(queens_neighborhoods, style = "W")
