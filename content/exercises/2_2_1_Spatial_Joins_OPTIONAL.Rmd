@@ -75,7 +75,6 @@ nrw_hospitals <-
 
 nrw_hospitals
 # 344 hospitals in NRW
-
 ```
 
 
@@ -87,7 +86,15 @@ Use the syntax below to prep the hospital data.
 Earn extra points by counting not only the number of hospitals but also the sum of hospital beds within a district.
 ```
 
-```{r load-data, eval = F}
+```{block, opts.label = "clues"}
+You need a `dplyr::as_tibble()` data frame to use the functions `dplyr::group_by()` and `dplyr::summarise()`.
+```
+
+```{block, opts.label = "clues"}
+The function `dplyr::n()` allows summarising the total count of hospitals. `sum(beds)` for summarizing the bed total per district.
+```
+
+```{r second, solution = TRUE}
 nrw_districts <- 
   sf::read_sf("./data/VG250_KRS.shp") %>% 
   sf::st_transform(3035) %>% 
@@ -99,17 +106,7 @@ nrw_hospitals <-
   dplyr::mutate(beds = as.numeric(beds)) %>%
   # replace NAs as zeros for simplification
   replace(is.na(.), 0)
-```
 
-```{block, opts.label = "clues"}
-You need a `dplyr::as_tibble()` data frame to use the functions `dplyr::group_by()` and `dplyr::summarise()`.
-```
-
-```{block, opts.label = "clues"}
-The function `dplyr::n()` allows summarising the total count of hospitals. `sum(beds)` for summarizing the bed total per district.
-```
-
-```{r second, solution = TRUE}
 district_hospital_join <-
   nrw_hospitals %>% 
   # join the hospitals 
@@ -125,7 +122,7 @@ district_hospital_join <-
   ) %>% 
   # left join the new information
   # to the original data frame
-  left_join(nrw_districts, .)
+  dplyr::left_join(nrw_districts, .)
 
 district_hospital_join 
 ```
