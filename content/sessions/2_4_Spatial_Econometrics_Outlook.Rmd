@@ -113,7 +113,7 @@ $$u = \lambda Wu + \epsilon$$
 
 ---
 
-## Flavors and estensions
+## Flavors and extensions
 
 .small[
 Spatial Durbin Model:
@@ -152,17 +152,10 @@ $$u = \lambda Wu + \epsilon$$
 
 ## Intermediate summary
 
-.pull-left[
-There are a lot of models you could estimate to *explain* spatial autocorrelation. And there's a vast body of literature on what's the best choice for which application. I'd explicitly like to recommend you the work of [Tobias Rüttenauer](https://ruettenauer.github.io/publication/) (guy on the right) for us social scientists. [Here](https://ruettenauer.github.io/SICSS-Spatial/index.html) are some really nice workshop materials.
-]
+There are a lot of models you could estimate to *explain* spatial autocorrelation. And there's a vast body of literature on what's the best choice for which application. 
 
-.pull-right[
-.center[
-```{r tobi, echo = F}
-woRkshoptools::include_picture("at_home.png")
-```
-]
-]
+I'd explicitly like to recommend you the work of [Tobias Rüttenauer](https://ruettenauer.github.io/publication/) for us social scientists. [Here](https://ruettenauer.github.io/SICSS-Spatial/index.html) are some really nice workshop materials.
+
 
 **In this session, we will only estimate Spatial Lag Y and X and Spatial Error Models.**
 
@@ -511,14 +504,23 @@ election_results_missing <-
   election_results
 
 election_results_missing$afd_share[missing_index] <- NA
-election_results_missing$afd_share[missing_index] <-
-  mean(election_results_missing$afd_share, na.rm = TRUE)
+
+election_results_missing <-
+  election_results_missing %>% 
+  sf::st_drop_geometry() %>% 
+  mice::mice(method = "norm.predict", m = 1) %>% 
+  mice::complete() %>% 
+  dplyr::left_join(
+    election_results_missing %>% 
+      dplyr::select(-afd_share, -immigrant_share, -inhabitants)
+  ) %>% 
+  sf::st_as_sf()
 ```
 ]
 
 .pull-right[
 .center[
-```{r mean-impute-2, echo = FALSE}
+```{r impute-2, echo = FALSE}
 # ~10% missing values
 missing_index <- 
   sample(
