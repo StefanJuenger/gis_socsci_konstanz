@@ -24,7 +24,7 @@ klippy::klippy()
 Let's get started with some hands-on exercises and exploring some data!
 This exercise focuses on importing different vector data geometries from various data sources and getting used to simple feature data tables.
 
-In the folder `./data`, you can find the data files  prepped for all the exercises which rely on preexisting data sets. 
+In the folder `./data`, you can find the data files prepped for all the exercises which rely on preexisting data sets. 
 However, if you like to play around with your own data, feel free to do so!
 . 
 
@@ -47,11 +47,10 @@ germany <- sf::read_sf("./data/VG250_STA.shp")
 plot(germany)
 ```
 
-The output in the console of the *RStudio* interface gives you already some information on the data you just loaded. You also see that the object "germany" appeared in your environment.
+The output in the console of ``R` gives you already some information on the data you just loaded. You also see that the object "germany" appeared in your environment.
 Though, we will explore the data set a little bit closer.
 
 ```{block, box.title = "2", box.body = list(fill = "white"), box.icon = "fa-star"}
-
 Explore the data and answer the following questions:
 
   - What is the geometry type? 

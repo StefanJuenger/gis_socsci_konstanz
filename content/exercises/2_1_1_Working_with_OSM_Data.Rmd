@@ -19,13 +19,12 @@ knitr::opts_template$set(
 klippy::klippy()
 ```
 
-
 ```{block, box.title = "1", box.body = list(fill = "white"), box.icon = "fa-star"}
 Pick a city of the world to your liking and retrieve its bounding box. Then plot it: What do you see?
 ```
 
 ```{block, opts.label = "clues"}
-The function you may search is part of the `osmdata` package.
+The function you may search is part of the `osmdata` package. Have a look at the slides.
 ```
 
 ```{r first, solution = TRUE}
@@ -43,7 +42,7 @@ Please choose one or two building types you are interested in and set them as ke
 ```
 
 ```{block, opts.label = "clues"}
-First, you specify the bounding box like before, second, the query parameters, and third, the key and value pairs. Try two use a pipe workflow as it makes it a bit easier.
+First, you specify the bounding box like before, second, the query parameters, and third, the key and value pairs. Try to use a pipe workflow as it makes it a bit easier.
 ```
 
 ```{r second, solution = TRUE}

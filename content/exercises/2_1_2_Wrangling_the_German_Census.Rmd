@@ -27,7 +27,7 @@ Download the 1 km² attribute for the German Census 2011 immigrant rate, which h
 ```
 
 ```{block, opts.label = "clues"}
-The function for downloading is `z11::z11_get_1km_attribute()` and the one for listing all attributes of this size `z11::z11_list_1km_attributes()`. There you can also see both of the data names.
+The function for downloading is `z11::z11_get_1km_attribute()` and the one for listing all attributes of this size `z11::z11_list_1km_attributes()`. There you can also see both of the layer names.
 ```
 
 ```{r first, solution = TRUE}
@@ -51,7 +51,7 @@ Crop both datasets to the extent of the city of Berlin.
 ```
 
 ```{block, opts.label = "clues"}
-You can use the `osmdata:getbb()` function to receive a proper polygon for this purpose. Make sure only to extract the `multipolygon` and to convert it to the EPSG:3035 CRS.
+You can use the `osmdata:getbb()` function to receive a proper polygon for this purpose. Make sure only to extract the `multipolygon` and to convert it to `EPSG:3035`.
 ```
 
 ```{r second, solution = TRUE}

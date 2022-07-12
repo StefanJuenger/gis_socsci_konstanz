@@ -21,7 +21,7 @@ knitr::opts_template$set(
 klippy::klippy()
 ```
 
-Alright, thus far, we have only used Queen neighborhood matrices with our data. Let's use this exercise to try out different variations. First of all, run the below in order to compile the data that were also used in the lecture.
+Alright, thus far, we have only used Queen neighborhood matrices with our data. Let's use this exercise to try out different variations. First of all, run the code below in order to compile the data that were also used in the lecture.
 
 ```{r compile-data, echo = FALSE}
 voting_districts <-
@@ -75,9 +75,9 @@ election_results <-
   election_results %>%
   dplyr::mutate(
     immigrant_share = 
-      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean'),
+      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean', progress = FALSE),
     inhabitants = 
-      exactextractr::exact_extract(inhabitants_cologne, ., 'mean')
+      exactextractr::exact_extract(inhabitants_cologne, ., 'mean', progress = FALSE)
   )
 ```
 
@@ -133,9 +133,9 @@ election_results <-
   election_results %>%
   dplyr::mutate(
     immigrant_share = 
-      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean'),
+      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean', progress = FALSE),
     inhabitants = 
-      exactextractr::exact_extract(inhabitants_cologne, ., 'mean')
+      exactextractr::exact_extract(inhabitants_cologne, ., 'mean', progress = FALSE)
   )
 ```
 
@@ -144,7 +144,7 @@ As in the lecture, create a neighborhood (weight) matrix, but this time do it fo
 ```
 
 ```{block, opts.label = "clues"}
-You could either use the `sdep` package with its function `spdep::poly2nb()` or the more modern approach of the `sfdep` package using the `sfdep::st_contiguity()`. In both cases you have to set the option `queen = FALSE` .
+You could either use the `sdep` package with its function `spdep::poly2nb()` or the more modern approach of the `sfdep` package using the function `sfdep::st_contiguity()`. In both cases, for Rook neighborhoods, you have to set the option `queen = FALSE`.
 ```
 
 ```{r first, solution = TRUE}
@@ -179,7 +179,7 @@ election_results <-
 ```{block, box.title = "2", box.body = list(fill = "white"), box.icon = "fa-star"}
 We have not used them, but you can also create distance-based weight matrices. Use again the package of your choice and create weights for a distance between 0 and 5000 meters. Use again row-normalization.
 
-For the purpose of this exercise, you also have to convert the polygon data to point coordinates. I'd propose to use the centroids for this endevour:
+For the purpose of this exercise, you also have to convert the polygon data to point coordinates. I'd propose to use the centroids for this task:
 
 `election_results_centroids <- sf::st_centroid(election_results)`
 

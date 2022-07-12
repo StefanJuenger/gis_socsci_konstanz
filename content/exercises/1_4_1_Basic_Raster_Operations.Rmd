@@ -20,7 +20,7 @@ klippy::klippy()
 ```
 
 ```{block, box.title = "1", box.body = list(fill = "white"), box.icon = "fa-star"}
-Create a matrix with 8 rows and 8 columns filles with random numbers in  a range between 1 and 1000.
+Create a matrix with 8 rows and 8 columns filled with random numbers in a range between 1 and 1000.
 ```
 
 ```{block, opts.label = "clues"}
@@ -55,10 +55,10 @@ fancy_raster_layer <-
 terra::plot(fancy_raster_layer)
 ```
 
-The `raster()` function can not only be used to create raster data on the fly, which is also not very interesting. Instead, we can use it to import already prepared data.
+The `terra::rast()` function can not only be used to create raster data on the fly, which is also not very interesting. Instead, we can use it to import already prepared data.
 
 ```{block, box.title = "3", box.body = list(fill = "white"), box.icon = "fa-star"}
-Import one of the raster `.tiff`  files in the `./data/` folder of the workshop directory (repository).
+Import one of the raster `.tiff`  files in the `./data` folder of the workshop directory.
 ```
 
 ```{block, opts.label = "clues"}

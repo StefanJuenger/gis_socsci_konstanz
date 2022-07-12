@@ -23,14 +23,14 @@ klippy::klippy()
 
 
 ```{block, box.title = "1", box.body = list(fill = "white"), box.icon = "fa-star"}
-In the session, we calculated the distances to the closest hospitals located within North-Rhine Westphalia (NRW). Still, we did not show how to subset the original file, which contains all hospitals in Germany.
+In the addon of the session, we calculated the distances to the closest hospitals located within North-Rhine Westphalia (NRW) and Baden Wurttemberg (BW). Still, we did not show how to subset the original file, which contains all hospitals in Germany.
 
-Subset the data file yourself by relying on the spatial information of the file `hospital_points.csv` and the polygon of North-Rhine Westphalia.
+Subset the data file yourself by relying on the spatial information of the file `hospital_points.csv` and a polygon of NRW only.
 How many hospitals are located within the borders of NRW?
 ```
 
 ```{block, opts.label = "clues"}
-You need two shapefiles for that: the point layer `hospital_points` in the `./data` folder and a shapefile of NRW. For NRW, you can  use the `osmdata` syntax.
+You need two datasets for that: the point layer `hospital_points.csv` in the `./data` folder and polygons of NRW. For the latter, you can again use the `osmdata` syntax.
 ```
 
 ```{block, opts.label = "clues"}
@@ -91,7 +91,7 @@ You need a `dplyr::as_tibble()` data frame to use the functions `dplyr::group_by
 ```
 
 ```{block, opts.label = "clues"}
-The function `dplyr::n()` allows summarising the total count of hospitals. `sum(beds)` for summarizing the bed total per district.
+The function `dplyr::n()` allows summarizing the total count of hospitals. `sum(beds)` for summarizing the bed total per district.
 ```
 
 ```{r second, solution = TRUE}

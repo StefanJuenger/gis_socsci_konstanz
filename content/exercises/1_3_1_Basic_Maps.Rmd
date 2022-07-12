@@ -73,12 +73,11 @@ Alternate the map by:
 - ...
 
 Assign your map to an object called `covid_map`.
-
 ```
 
 
 ```{block, opts.label = "clues"}
-Combine following options with a plus sign:
+Combine the following options with a plus sign:
 
 - add a legend title and change the color palette: `tm_fill(col = "", title = "", palette = "") +`
 - add a title to the map and change the font color of the title: `tm_layout(title = "", title.color = "") +`

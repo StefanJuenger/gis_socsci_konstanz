@@ -19,10 +19,8 @@ knitr::opts_template$set(
 klippy::klippy()
 ```
 
-
-
 ```{block, box.title = "1", box.body = list(fill = "white"), box.icon = "fa-star"}
-Sample 50 points that fall within the boundaries of the city of Cologne. You will find the shapefile in the `./data/` folder.
+Sample 50 points that fall within the boundaries of the city of Cologne. You will find the shapefile in the `./data` folder.
 ```
 
 ```{block, opts.label = "clues"}
@@ -51,7 +49,7 @@ You would need the `immigrants_cologne.tif` and `inhabitants_cologne.tif` files 
 ```
 
 ```{r second, solution = TRUE}
-library(raster)
+library(terra)
 
 immigrant_rates <-
   terra::rast("./data/immigrants_cologne.tif") * 100 /
@@ -78,16 +76,18 @@ Use an adequate method of raster extraction to gather information in the geograp
 ```
 
 ```{block, opts.label = "clues"}
-Assume that people move in a 500 meters radius around their location. Thus, extracting information on buffers of 500 meters around the points might be interesting using the option `buffer = 500`. In that case, you should also set a descriptive statistics function, e.g., with the option `fun = mean`. 
+Assume that people move in a 500 meters radius around their location. Thus, extracting information on buffers of 500 meters around the points might be interesting using the option `sf::st_buffer()` function. In that case, you should also set a descriptive statistics function, e.g., with the option `fun = mean` and its helpful companion option to consider missing values `na.rm = TRUE`. 
 ```
 
 ```{r fourth, solution = TRUE}
 immigrant_rates_500m_buffer <-
   terra::extract(
     immigrant_rates, 
-    terra::vect(cologne_50_points), 
-    buffer = 500, 
-    fun = mean
+    cologne_50_points %>% 
+      sf::st_buffer(500) %>% 
+      terra::vect(), 
+    fun = mean,
+    na.rm = TRUE
     )
 ```
 

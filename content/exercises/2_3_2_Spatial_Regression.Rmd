@@ -75,9 +75,9 @@ election_results <-
   election_results %>%
   dplyr::mutate(
     immigrant_share = 
-      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean'),
+      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean', progress = FALSE),
     inhabitants = 
-      exactextractr::exact_extract(inhabitants_cologne, ., 'mean')
+      exactextractr::exact_extract(inhabitants_cologne, ., 'mean', progress = FALSE)
   )
 ```
 
@@ -133,9 +133,9 @@ election_results <-
   election_results %>%
   dplyr::mutate(
     immigrant_share = 
-      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean'),
+      exactextractr::exact_extract(immigrant_share_cologne, ., 'mean', progress = FALSE),
     inhabitants = 
-      exactextractr::exact_extract(inhabitants_cologne, ., 'mean')
+      exactextractr::exact_extract(inhabitants_cologne, ., 'mean', progress = FALSE)
   )
 ```
 
