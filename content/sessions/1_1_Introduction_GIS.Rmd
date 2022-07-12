@@ -497,7 +497,7 @@ woRkshoptools::include_picture("sf.jpg")
 
 ---
 
-## Packages in This Course (XYZ)
+## Packages in This Course
 
 We will use plenty of different packages during the course, but only a few are our main drivers (e.g., the `sf` package). Here's the list of packages
 
