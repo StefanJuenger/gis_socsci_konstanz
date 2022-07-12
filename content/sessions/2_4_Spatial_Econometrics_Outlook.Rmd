@@ -449,7 +449,6 @@ tm_shape(election_results_missing) +
 
 ## How does a Spatial Lag X Model perform?
 
-
 ```{r spatial-lag-y-missing}
 queen_neighborhoods_missing <- 
   spdep::poly2nb(election_results_missing, queen = TRUE)
@@ -516,7 +515,7 @@ election_results_missing <-
   ) %>% 
   sf::st_as_sf()
 ```
-]
+] 
 
 .pull-right[
 .center[
