@@ -1,4 +1,9 @@
 # Workshop "Geospatial Techniques for Social Scientists" (July 14/15, 2022)
+
+<p align=center>   
+<a href="https://stefanjuenger.github.io/gis_socsci_konstanz/"><b>CLICK HERE FOR AN UNCLUTTERED VIEW</b></a> 
+</p>
+
 Materials for the workshop "Geospatial Techniques for Social Scientists" at the Methods and Data Hub, Cluster of Excellence "The Politics of Inequality" 
 
 [Stefan Jünger](https://stefanjuenger.github.io) (stefan.juenger@gesis.org)
