@@ -378,7 +378,11 @@ spatialreg::impacts(spatial_lag_y_model, listw = queen_W, R = 500) %>%
 
 class: middle
 
-## Exercise
+## Exercise 2_3_2: Spatial Regression
+
+[Exercise](https://stefanjuenger.github.io/gis_socsci_konstanz/exercises/2_3_2_Spatial_Regression.html)
+
+[Solution](https://stefanjuenger.github.io/gis_socsci_konstanz/solutions/2_3_2_Spatial_Regression.html)
 
 ---
 

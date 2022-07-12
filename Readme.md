@@ -50,6 +50,8 @@ As social scientists aiming to explore the fascinating world of geospatial data,
 
 [3_1_1 Neighborhood Matrices](https://stefanjuenger.github.io/gis_socsci_konstanz/exercises/3_1_1_Neighborhood_Matrices.html)
 
+[2_3_2: Spatial Regression](https://stefanjuenger.github.io/gis_socsci_konstanz/exercises/2_3_2_Spatial_Regression.html)
+
 ## Solutions
 [1_1_1 Package Installation](https://stefanjuenger.github.io/gis_socsci_konstanz/solutions/1_1_1_Package_Installation.html)
 
@@ -72,4 +74,6 @@ As social scientists aiming to explore the fascinating world of geospatial data,
 [2_2_1 Spatial Joins (optional!)](https://stefanjuenger.github.io/gis_socsci_konstanz/solutions/2_2_1_Spatial_Joins.html)
 
 [3_1_1 Neighborhood Matrices](https://stefanjuenger.github.io/gis_socsci_konstanz/solutions/3_1_1_Neighborhood_Matrices.html)
+
+[2_3_2: Spatial Regression](https://stefanjuenger.github.io/gis_socsci_konstanz/solutions/2_3_2_Spatial_Regression.html)
 
