@@ -29,7 +29,7 @@ However, if you like to play around with your own data, feel free to do so!
 . 
 
 ```{block, box.title = "1", box.body = list(fill = "white"), box.icon = "fa-star"}
-Load the administrative borders of Germany. Therefore, import the shapefile `VG_250.shp` from the respective folder and assign it to an object named "germany". 
+Load the administrative borders of Germany. Therefore, import the shapefile `VG250_STA.shp` from the respective folder and assign it to an object named "germany". 
 
 Plot the newly created object.
 ```
