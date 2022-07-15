@@ -320,7 +320,7 @@ Let's stick to our theory, shall we?
 
 ## Of higher importance: interpretation
 
-Unfortunately, in case of a Spatial Lag X Model the spatial parameter $\rho$ only tells us that the effect is (statistically) significant -- or not. 
+Unfortunately, in case of a Spatial Lag Y Model the spatial parameter $\rho$ only tells us that the effect is (statistically) significant -- or not. 
 - remember: these models are endegenous by design
   - we have effects of $y_j$ on $y_i$ and vice versa
   - what a mess
